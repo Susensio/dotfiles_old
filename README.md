@@ -27,3 +27,9 @@ git clone --bare https://github.com/Susensio/dotfiles.git
 dotfiles checkout
 dotfiles config --local status.showUntrackedFiles no
 ```
+
+
+## Credits
+
+[Nicola Paolucci](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/)
+[Harfang's Perch](https://harfangk.github.io/2016/09/19/manage-dotfiles-with-a-git-bare-repository.html)
