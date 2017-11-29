@@ -1,0 +1,3 @@
+# CTRL+Left/Right skip to previous/next word from putty
+"\eOD": backward-word
+"\eOC": forward-word
