@@ -43,3 +43,4 @@ endif
 
 " Make text more readable
 set background=dark
+set number
