@@ -28,6 +28,10 @@ alias diff="diff --color"
 # Git dotfiles
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 
+# Autocompletion tldr
+cachedir=~/.local/share/tldr # Or whatever else the location of the tldr cache is
+complete -W "$(q=($cachedir/*/*); sed 's@\.md @ @g' <<<${q[@]##*/})" tldr
+
 # Extrat from common file formats
 function extract {
  if [ -z "$1" ]; then
