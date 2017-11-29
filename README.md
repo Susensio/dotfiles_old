@@ -21,7 +21,6 @@ dotfiles push origin master
 Install to another system:
 ``` bash
 alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
-source ~/.bashrc
 echo ".dotfiles.git" >> .gitignore
 git clone --bare https://github.com/Susensio/dotfiles.git
 dotfiles checkout
