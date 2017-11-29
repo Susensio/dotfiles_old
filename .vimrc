@@ -44,3 +44,5 @@ endif
 " Make text more readable
 set background=dark
 set number
+colorscheme elflord
+highlight LineNr ctermfg=grey
