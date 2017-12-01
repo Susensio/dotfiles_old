@@ -46,3 +46,13 @@ set background=dark
 set number
 colorscheme elflord
 highlight LineNr ctermfg=grey
+
+" Tabs and indent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" Temp files
+set undodir=~/.vim/.undo//
+set backupdir=~/.vim/.backup//
+"" set directory=~/.vim/.swp//
