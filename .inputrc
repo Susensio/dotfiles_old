@@ -1,6 +1,12 @@
 # CTRL+Left/Right skip to previous/next word from putty
 "\eOD": backward-word
 "\eOC": forward-word
+"\e[1;5D": backward-word
+"\e[1;5C": forward-word
 
 # Case insensitive tab completion
 set completion-ignore-case on
+
+# Incremental searching with Up and Down. Type 'ssh <up>' to get the last 'ssh' command you used
+"\e[A": history-search-backward
+"\e[B": history-search-forward
