@@ -42,13 +42,10 @@ fi;
 
 Make sure we have at least 128 Mb shared GPU memory and updated system:
 
-``` bash
-sudo apt-get update; sudo apt-get dist-upgrade -y
-```
-
 We need installed some libraries to get Chromium's ability to use Raspberry Pi GPU:
 
 ``` bash
+sudo apt-get update; sudo apt-get dist-upgrade -y
 sudo apt-get install mesa-vdpau-drivers -y
 ```
 
@@ -60,13 +57,7 @@ Then, open Chromium browser, go to ```chrome://flags``` and set enabled next fla
 #ignore-gpu-blacklist
 ```
 
-Next open in editor Chromium shortcut (chromium-browser.desktop) and find the line:
-
-``` bash
-Exec=chromium-browser %U
-```
-
-Edit it like this:
+Next open in editor Chromium shortcut (chromium-browser.desktop) and set the line:
 
 ``` bash
 Exec=chromium-browser --enable-native-gpu-memory-buffers %U
