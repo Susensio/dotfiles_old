@@ -65,11 +65,15 @@ Exec=chromium-browser --enable-native-gpu-memory-buffers %U
 
 ## Logitech K400+ keyboard + trackpad
 
-Enable *natural scrolling* and *middle button emulation*. Must be set in every boot (e.g. adding it to rc.local).
+Enable *natural scrolling* and *middle button emulation*. Must be set in every boot: save as K400-setup.desktop in ~/.config/autostart).
 
 ```bash
-xinput | grep K400.*keyboard | cut -f2 | cut -c4- | xargs -I{} xinput set-prop 7 "libinput Middle Emulation Enabled" 1
-xinput | grep K400.*keyboard | cut -f2 | cut -c4- | xargs -I{} xinput set-prop 7 "libinput Natural Scrolling Enabled" 1
+[Desktop Entry]
+Type=Application
+Name=K400 setup
+Comment=Setup K400+ keyboard to use virtual middle button and natural scrolling
+NoDisplay=true
+Exec=sh -c 'xinput set-prop "keyboard:Logitech K400 Plus" "libinput Middle Emulation Enabled" 1; xinput set-prop "keyboard:Logitech K400 Plus" "libinput Natural Scrolling Enabled" 1'
 ```
 
 ## Increase swap allocation
