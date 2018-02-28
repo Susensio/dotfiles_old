@@ -14,7 +14,8 @@ alias df="pydf"
 #alias df="df -Th --total"
 #alias du="ncdu"
 alias dus="du -Sh | sort -n -r | more"
-alias histg="history | grep"
+alias histg="history | grep "
+alias gh="history | grep "
 #alias historytop:"history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n10"
 
 # Continue download
@@ -31,6 +32,28 @@ alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 # Autocompletion tldr
 cachedir=~/.local/share/tldr # Or whatever else the location of the tldr cache is
 complete -W "$(q=($cachedir/*/*); sed 's@\.md @ @g' <<<${q[@]##*/})" tldr
+
+# ghf - [G]rep [H]istory [F]or top ten commands and execute one
+# usage:
+#  Most frequent command in recent history
+#   ghf
+#  Most frequent instances of {command} in all history
+#   ghf {command}
+#  Execute {command-number} after a call to ghf
+#   !! {command-number}
+function latest-history { history | tail -n 50 ; }
+function grepped-history { history | grep "$1" ; }
+function chop-first-column { awk '{for (i=2; i<NF; i++) printf $i " "; print $NF}' ; }
+function add-line-numbers { awk '{print NR " " $0}' ; }
+function top-ten { sort | uniq -c | sort -r | head -n 10 ; }
+function unique-history { chop-first-column | top-ten | chop-first-column | add-line-numbers ; }
+function ghf {
+  if [ $# -eq 0 ]; then latest-history | unique-history; fi
+  if [ $# -eq 1 ]; then grepped-history "$1" | unique-history; fi
+  if [ $# -eq 2 ]; then
+    `grepped-history "$1" | unique-history | grep ^$2 | chop-first-column`;
+  fi
+}
 
 # Extrat from common file formats
 function extract {
