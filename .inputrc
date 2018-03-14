@@ -1,3 +1,8 @@
+# Determine the secuence emited:
+# [Ctrl]-[V]
+# [F12]
+# >> ^[[24~
+# translates into => "\e[24~"
 # CTRL+Left/Right skip to previous/next word from putty
 "\eOD": backward-word
 "\eOC": forward-word
