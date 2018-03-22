@@ -7,9 +7,11 @@ function mcd {
  mkdir -p $1
  cd $1;
 }
+alias mkdir="mkdir -pv"
 
 # System
 alias reboot="sudo reboot"
+alias psg="ps aux | grep -v grep | grep -i -e VSZ -e"
 alias df="pydf"
 #alias df="df -Th --total"
 #alias du="ncdu"
@@ -18,6 +20,9 @@ alias hg="history | grep "
 alias gh="history | grep "
 #alias historytop:"history | awk '{CMD[$2]++;count++;}END { for (a in CMD)print CMD[a] " " CMD[a]/count*100 "% " a;}' | grep -v "./" | column -c3 -s " " -t | sort -nr | nl |  head -n10"
 alias gitgraph="git log --graph --oneline --all --decorate --topo-order"
+
+alias fhere="find . -name "
+alias fall="find / -name "
 
 # Continue download
 alias wget="wget -c"
