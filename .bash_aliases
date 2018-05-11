@@ -8,6 +8,9 @@ function mcd {
  cd $1;
 }
 alias mkdir="mkdir -pv"
+shopt -s globstar
+# complete -cf sudo
+complete -d cd
 
 # System
 alias reboot="sudo reboot"
@@ -22,7 +25,7 @@ alias gh="history | grep "
 alias gitgraph="git log --graph --oneline --all --decorate --topo-order"
 
 alias fhere="find . -name "
-alias fall="find / -name "
+alias fall="sudo find / -name "
 
 # Continue download
 alias wget="wget -c"
