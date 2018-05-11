@@ -43,7 +43,7 @@ endif
 
 " Make text more readable
 set background=dark
-set number
+set number relativenumber
 colorscheme elflord
 highlight LineNr ctermfg=grey
 
