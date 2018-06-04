@@ -86,5 +86,10 @@ set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
 
-set clipboard=unnamed
+set clipboard=unnamedplus
+
+" Line wrap
+set wrap
+set linebreak
+set nolist
 
