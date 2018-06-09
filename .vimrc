@@ -47,7 +47,7 @@ if has("autocmd")
   au!
 
   " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
+"  autocmd FileType text setlocal textwidth=78
 
   augroup END
 
@@ -91,5 +91,6 @@ set clipboard=unnamedplus
 " Line wrap
 set wrap
 set linebreak
-set nolist
-
+set textwidth=0
+imap <silent> <Down> <C-o>gj
+imap <silent> <Up> <C-o>gk
