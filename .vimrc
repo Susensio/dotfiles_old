@@ -27,8 +27,8 @@ if has("autocmd")
   augroup vimrcEx
   au!
 
-  " For all text files set 'textwidth' to 78 characters.
-"  autocmd FileType text setlocal textwidth=78
+  " For all text files set 'columns' to 82 characters.
+  autocmd FileType text setlocal columns=82
 
   augroup END
 
