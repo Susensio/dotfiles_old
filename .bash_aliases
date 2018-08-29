@@ -26,6 +26,7 @@ alias gitgraph="git log --graph --oneline --all --decorate --topo-order"
 
 alias fhere="find . -name "
 alias fall="sudo find / -name "
+eval $(thefuck --alias)
 
 # Continue download
 alias wget="wget -c"

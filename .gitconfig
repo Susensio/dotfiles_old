@@ -1,5 +1,11 @@
 [user]
 	email = susensio@gmail.com
 	name = Susensio
+
 [credential]
 	helper = store
+
+[alias]
+	graph = log --oneline --all --graph --decorate --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+[merge]
+	conflictstyle = diff3
