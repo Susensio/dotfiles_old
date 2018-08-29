@@ -18,6 +18,8 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 
+Plugin 'nginx.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -86,7 +88,7 @@ set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
 
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 
 " Line wrap
 set wrap
@@ -94,3 +96,19 @@ set linebreak
 set textwidth=0
 imap <silent> <Down> <C-o>gj
 imap <silent> <Up> <C-o>gk
+
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
+" Tricks from https://vim-bootstrap.com/
+"" no one is really happy until you have this shortcuts
+cnoreabbrev W! w!
+cnoreabbrev Q! q!
+cnoreabbrev Qall! qall!
+cnoreabbrev Wq wq
+cnoreabbrev Wa wa
+cnoreabbrev wQ wq
+cnoreabbrev WQ wq
+cnoreabbrev W w
+cnoreabbrev Q q
+cnoreabbrev Qall qall
