@@ -1,3 +1,22 @@
+# Disable ctrl+s ctrl+q locking terminal scroll
+stty -ixon
+
+# Colorize man pages
+export LESS_TERMCAP_mb=$'\e[1;32m'
+export LESS_TERMCAP_md=$'\e[1;32m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;33m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[1;4;31m'
+
+
+# Fix bluetooth connection problem
+alias headphones="/usr/local/bin/a2dp.py 00:16:94:29:4F:47"
+
+# Ag searcher always color
+alias ag="ag --color"
+
 # Navigation and listing
 alias ls="ls --color -F"
 alias ll="ls -lhA"
