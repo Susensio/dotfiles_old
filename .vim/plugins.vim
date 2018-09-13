@@ -12,7 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 " used Bundle instead of Plugin)
 Plugin 'nginx.vim'
 
-Plugin 'tmhedberg/SimpylFold'
+"Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 
 " Behavior
