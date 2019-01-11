@@ -59,7 +59,7 @@ Then, open Chromium browser, go to ```chrome://flags``` and set enabled next fla
 
 Next open in editor Chromium shortcut (chromium-browser.desktop) and set the line:
 
-``` bash
+```
 Exec=chromium-browser --enable-native-gpu-memory-buffers %U
 ```
 
@@ -67,7 +67,7 @@ Exec=chromium-browser --enable-native-gpu-memory-buffers %U
 
 Enable *natural scrolling* and *middle button emulation*. Must be set in every boot: save as K400-setup.desktop in ~/.config/autostart).
 
-```bash
+```
 [Desktop Entry]
 Type=Application
 Name=K400 setup
@@ -79,6 +79,19 @@ Exec=sh -c 'xinput set-prop "keyboard:Logitech K400 Plus" "libinput Middle Emula
 ## Increase swap allocation
 
 For better perfomance in low memory situations, set ```CONF_SWAPSIZE=1024``` in ```/etc/dphys-swapfile```.
+
+
+## Change pi user
+
+```bash
+NEWUSER="susensio"
+
+sudo adduser $NEWUSER
+for GROUP in $(groups pi | sed ‘s/.*:\s//’); do sudo adduser $NEWUSER $GROUP; done
+
+sudo sed -i "s/pi/${NEWUSER}/" /etc/sudoers.d/010_pi-nopasswd
+sudo mv /etc/sudoers.d/010_pi-nopasswd /etc/sudoers.d/010_${NEWUSER}-nopassdw
+```
 
 
 ## Credits
