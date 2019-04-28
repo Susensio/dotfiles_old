@@ -28,7 +28,11 @@ function mcd {
 }
 alias mkdir="mkdir -pv"
 shopt -s globstar
-# complete -cf sudo
+
+# Autocomplete sudo
+if [ "$PS1" ]; then
+ complete -cf sudo
+fi
 complete -d cd
 
 # System
