@@ -66,6 +66,9 @@ alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME"
 cachedir=~/.local/share/tldr # Or whatever else the location of the tldr cache is
 complete -W "$(q=($cachedir/*/*); sed 's@\.md @ @g' <<<${q[@]##*/})" tldr
 
+# Python debug if error
+alias pydebug="python -m pdb -c continue"
+
 # ghf - [G]rep [H]istory [F]or top ten commands and execute one
 # usage:
 #  Most frequent command in recent history
