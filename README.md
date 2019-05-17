@@ -87,6 +87,8 @@ For better perfomance in low memory situations, set ```CONF_SWAPSIZE=1024``` in 
 NEWUSER="susensio"
 
 sudo adduser $NEWUSER
+# PASSWORD PROMPT
+
 for GROUP in $(groups pi | sed ‘s/.*:\s//’); do sudo adduser $NEWUSER $GROUP; done
 
 sudo sed -i "s/pi/${NEWUSER}/" /etc/sudoers.d/010_pi-nopasswd
