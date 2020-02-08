@@ -52,7 +52,7 @@ sudo apt-get install mesa-vdpau-drivers -y
 Then, open Chromium browser, go to ```chrome://flags``` and set enabled next flags:
 
 ```
-#enable-gpu-rasterization
+#enable-gpu-rasterization/etc/default/locale
 #enable-zero-copy
 #ignore-gpu-blacklist
 ```
@@ -93,6 +93,14 @@ for GROUP in $(groups pi | sed ‘s/.*:\s//’); do sudo adduser $NEWUSER $GROUP
 
 sudo sed -i "s/pi/${NEWUSER}/" /etc/sudoers.d/010_pi-nopasswd
 sudo mv /etc/sudoers.d/010_pi-nopasswd /etc/sudoers.d/010_${NEWUSER}-nopassdw
+```
+
+
+## Monday first on gnome calendar
+
+File '/etc/default/locale' must contain
+```bash
+LC_TIME="en_GB.UTF-8"
 ```
 
 
