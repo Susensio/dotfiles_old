@@ -98,7 +98,7 @@ sudo mv /etc/sudoers.d/010_pi-nopasswd /etc/sudoers.d/010_${NEWUSER}-nopassdw
 
 ## Monday first on gnome calendar
 
-File '/etc/default/locale' must contain
+File `/etc/default/locale` must contain
 ```bash
 LC_TIME="en_GB.UTF-8"
 ```
