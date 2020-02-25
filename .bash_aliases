@@ -69,6 +69,9 @@ complete -W "$(q=($cachedir/*/*); sed 's@\.md @ @g' <<<${q[@]##*/})" tldr
 # Python debug if error
 alias pydebug="python -m pdb -c continue"
 
+# column selector as in 'svn st | c 2 | xargs rm'
+function c() { awk "{print \$$1}" }
+
 # ghf - [G]rep [H]istory [F]or top ten commands and execute one
 # usage:
 #  Most frequent command in recent history
